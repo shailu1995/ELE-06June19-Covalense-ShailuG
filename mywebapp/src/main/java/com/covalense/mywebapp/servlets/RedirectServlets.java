@@ -14,7 +14,7 @@ import com.covalense.mywebapp.bean.EmployeeInfoBean;
 /**
  * Servlet implementation class RedirectServlets
  */
-@WebServlet("/forward")
+//@WebServlet("/forward")
 public class RedirectServlets extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

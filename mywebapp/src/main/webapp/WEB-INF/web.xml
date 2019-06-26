@@ -8,7 +8,7 @@
 	
 	<display-name>Archetype Created Web Application</display-name>
 	
-	<context-param>
+	<!-- <context-param>
 		<param-name>movie</param-name>
 		<param-value>sholay</param-value>
 	</context-param>
@@ -86,6 +86,6 @@
 		<servlet-name>ReadCookieServlet</servlet-name>
 		<url-pattern>/ReadCookieServlet</url-pattern>
 	</servlet-mapping>
-
+ -->
 
 </web-app>
