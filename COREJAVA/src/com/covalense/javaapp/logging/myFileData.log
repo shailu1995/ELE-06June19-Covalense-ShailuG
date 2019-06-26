@@ -1,0 +1,16 @@
+Jun 18, 2019 9:55:58 AM com.shailu.TestB main
+SEVERE: hi its a SEVERE message
+Jun 18, 2019 9:55:58 AM com.shailu.TestB main
+WARNING: hi its a WARNING message
+Jun 18, 2019 9:55:58 AM com.shailu.BuyProduct buy
+SEVERE: buy button was clicked
+Jun 18, 2019 9:55:58 AM com.shailu.BuyProduct buy
+WARNING: hi its a WARNING message for buy product
+Jun 18, 2019 9:56:35 AM com.shailu.TestB main
+SEVERE: hi its a SEVERE message
+Jun 18, 2019 9:56:36 AM com.shailu.TestB main
+WARNING: hi its a WARNING message
+Jun 18, 2019 9:56:36 AM com.shailu.BuyProduct buy
+SEVERE: buy button was clicked
+Jun 18, 2019 9:56:36 AM com.shailu.BuyProduct buy
+WARNING: hi its a WARNING message for buy product
