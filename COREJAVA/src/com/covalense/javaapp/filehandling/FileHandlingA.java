@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 
-public class FileHandling1 {
+public class FileHandlingA {
 
 	public static void main(String[] args) {
 		System.out.println("Reading the file..");
