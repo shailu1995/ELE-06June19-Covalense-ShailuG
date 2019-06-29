@@ -1,0 +1,15 @@
+h1{
+    color: cornflowerblue;
+    background: brown;
+}
+#paragraph{
+    padding: 20px;
+    background: crimson;
+
+}
+input[type="text"],input[type="password"]{
+    height: 40px;
+    width: 300px;
+    font-size: 32px;
+   
+}

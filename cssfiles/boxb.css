@@ -1,0 +1,28 @@
+#box1{
+    background: chartreuse;
+    padding: 100px;
+    border: crimson;
+    margin: 10px;
+    
+}
+#box2{
+    background: blue;
+  padding: 20px;
+ 
+   float: left;
+  margin: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  outline-style: dotted;
+   
+
+}
+#box3{
+    height:100px;
+    background: blueviolet;
+    float: left;
+    margin: 50px;
+    text-shadow: chocolate 2px 2px;
+}
+p{
+    font-family: 'Josefin Sans', sans-serif;
+}
