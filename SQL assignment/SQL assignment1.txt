@@ -1,0 +1,44 @@
+1.WAQ to display the employee working in dept 20
+
+mysql> select * from employee1 where deptno=20;
+
+
+2.WAQ to display the employee earning more than RS 25000.
+
+mysql> select * from employee1 where salary>25000;
+
+
+3.WAQ to display all the employee whose job type is software developer.
+
+mysql> select * from employee1 where job='it';
+
+
+4.WAQ to display the employee working  in dept 10,20,40
+
+mysql> select * from employee1 where deptno in (10,20,40);
+
+
+5.WAQ to display all the employee whose first name is having 'h' as 2nd character.
+
+mysql> select * from employee1 where fname like '_h%';
+
+
+6.WAQ to display the employee whose fname is having letter 'L' as  2nd char.
+
+mysql> select * from employee1 where fname like '%a%a%';
+
+
+7.WAQ to display the emp whose fname is having atleast 2 'a' char
+
+mysql> select * from employee1 where fname like '%a%a%';
+
+
+8.WAQ to display the emp whose lname is having letter  'e' as the 2nd last char.
+mysql> select * from employee1 where lname like '%e';
+
+9.WAQ to display the emp who are having exactly 5 characters in their lastname.
+mysql> select * from employee1 where lname like '_____';
+
+10.WAQ to display the emp whose salary is between 20000 and 30000.
+
+mysql> select * from employee1 where salary between 20000 and 30000;
