@@ -1,0 +1,60 @@
+1.Write a query to display Employee name, his salary along with the designation for all the employee.
+ANS: select name,salary,designation from employee;
+
+3.Write a query to display all the details of the Employee who are working as salesman.
+ans:select * from employee where job_type="salesman";
+
+4.Write a query to display all the employees of Dept.no 20.
+ans: select * from employee where Dept.no=20;
+
+5.Write a query to display all the Employees DOB before 1994.
+ans: select * from employee where DOB<1994;
+
+6.Write a query to display all the employees whose annual salary is less than 30,000.
+ans: select * from employee where (salary*12) as annual_salary<30000;
+
+
+7.Write a query to display name, salary and Annual salary of all the clerks.
+ans: select name,salary,salary*12 as Annual_salary from employee where job_type="clearks";
+
+8.Write a query to display all the details of Employee Whoever Hired after Feb of 2013.
+ans: select * from employee where joining_date
+
+9.Write a query to display managers working in deptno 20 only if salary is greater than 2500.
+ans:select manager from employee where depart_no=20 and salary>2500;
+
+10.Write a query to display all the employee excluding Analyst.
+ans select * from employee where job_type NOT IN("Analyst");
+
+11.Write a query to display all the employees excluding salesman who are working in department 30.
+ans: select * from employee where id=30 AND  job_type NOT IN("salesman") ;
+
+12.Write a query to display names of all the employee who are working in dept 30 as manager OR all the names of employee who are working as a clerk and salary less than 2000.
+ans: select name from employee where (dept_id=30 and job_type="manager") or (job_type="clerk" and salary<2000) ;
+
+13.Write a query to display all the Employees in dept 20 only if their salary is greater than 1000 and less than 3500, including 1000 & 3500.
+ans: select * from employee where department_id=20 and salary IN(1000,3500);
+
+14.Write a query to display all the details of Employees who are working as clerk in deptno 20,30 or 40.
+ANS: select * from employee where job_type="clerk ",depart_no in(20,30,40);
+
+15.Write a query to display the details of software developer, manager or clerk who are working in dept.  10 or 20 and salary is greater than 1500.
+ans: select * from employee where job_type in("developer","manager","clerk ") and dept_no in(10,20) and salary>1500;
+
+16. Write a query to display all the details of Employees who are working in department 10,20 excluding all the Salesman and Analyst.
+ans: select * from employee where department_no in(10,20) and job_type not in("Salesman ","Analyst");
+
+17. Write a query to display name, Salary for all the Employees who are working in dept 10 or 20 and their annual salary between 20,000 and 40,000 including the limits.
+ans:select name,salary from employee where dept_id(10,20) and annual_salary between(20000,40000);
+
+20.Write a query to display Average salary and Highest salary of dept. 20.
+ans: select avg(salary),max(salary) from employee where dept_id=20; 
+
+23.Write a query to display the total salary and average salary of each department
+ans: select avg(salary),total_salary group by department;
+
+26. Write a query to list the employee whose designation are same as Vikas   
+ans  select * from employee where designation like "vikas" ;
+
+
+
