@@ -1,5 +1,4 @@
 package com.covalense.jdbcaapp;
-
 import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,19 +10,16 @@ import lombok.extern.java.Log;
 @Log
 public final class MyFirstJdbcProgram {
 	public static void main(String[] args) {
-
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
 		String query = null;
 		// 1.load the "driver"
-		Driver driver;
+		//Driver driver;
 		try {
-
 			/*
 			 * driver = new Driver(); DriverManager.deregisterDriver(driver);
 			 */
-
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			// 2.get the db connected to the driver
 			// String dbUrl =
@@ -38,7 +34,7 @@ public final class MyFirstJdbcProgram {
 			query = "select * from employee_info";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
-            //process the result return by sql
+			// process the result return by sql
 			while (rs.next()) {
 				log.info("id             ====> " + rs.getInt("ID"));
 				log.info("name           ====> " + rs.getString("name"));

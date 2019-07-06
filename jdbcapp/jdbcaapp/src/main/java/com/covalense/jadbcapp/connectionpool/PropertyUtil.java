@@ -8,13 +8,12 @@ public class PropertyUtil {
 	Properties properties = null;
 
 	public static PropertyUtil getPropertyUtil() {
-		if (util==null) {
-			util =new PropertyUtil();
-			}
+		if (util == null) {
+			util = new PropertyUtil();
+		}
 		return util;
-
 	}
-
+	
 	public void PropertyUtil() throws Exception {
 		properties = new Properties();
 		properties.load(new FileInputStream("db.properties"));

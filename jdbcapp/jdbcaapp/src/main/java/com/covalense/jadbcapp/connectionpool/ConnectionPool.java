@@ -16,7 +16,7 @@ public class ConnectionPool {
 	private static PropertyUtil util = null;
 	private Vector<Connection> pool = null;
 	private int poolsize;
-	private String dburl ;
+	private String dburl;
 	private String userNM;
 	private String password;
 	private Connection con = null;
@@ -38,19 +38,16 @@ public class ConnectionPool {
 
 	public void loadProperties() throws Exception {
 
-	//	Properties properties = new Properties();
-	//	properties.load(new FileInputStream("db.properties"));
-		poolsize=Integer.parseInt(PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.POOL_SIZE));
-		dburl=PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.DB_URL);
-		userNM=PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.USERNM);
-		password=PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.PASSWORD);
-		drviverClassNM=PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.DRIVER_NAME);
-		
-		
+		// Properties properties = new Properties();
+		// properties.load(new FileInputStream("db.properties"));
+		poolsize = Integer.parseInt(PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.POOL_SIZE));
+		dburl = PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.DB_URL);
+		userNM = PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.USERNM);
+		password = PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.PASSWORD);
+		drviverClassNM = PropertyUtil.getPropertyUtil().getProperty(ConnectionPoolConstants.DRIVER_NAME);
 	}
 
 	private Properties PropertyUtila() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -60,7 +57,6 @@ public class ConnectionPool {
 			con = DriverManager.getConnection(dburl, userNM, password);
 			pool.add(con);
 		} // end of for
-
 	}// end of construction
 
 	public Connection getConnectionFromPool() {

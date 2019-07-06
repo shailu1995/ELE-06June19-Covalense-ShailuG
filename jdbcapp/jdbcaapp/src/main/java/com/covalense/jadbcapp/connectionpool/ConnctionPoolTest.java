@@ -12,9 +12,6 @@ import lombok.extern.java.Log;
 @Log
 public final class ConnctionPoolTest {
 	public static void main(String[] args) {
-
-		
-		
 		Connection con = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -23,7 +20,7 @@ public final class ConnctionPoolTest {
 		try {
 			pool = ConnectionPool.getConnectionPool();
 			con = pool.getConnectionFromPool();
-			//issue sql query via connection
+			// issue sql query via connection
 			query = "select * from employee_info";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(query);
@@ -44,9 +41,7 @@ public final class ConnctionPoolTest {
 				log.info("mngr_id        ====> " + rs.getInt("mngr_id"));
 
 			}
-
 		} catch (Exception e) {
-
 			e.printStackTrace();
 		} finally {
 
@@ -57,7 +52,8 @@ public final class ConnctionPoolTest {
 				 */
 				if (stmt != null) {
 					stmt.close();
-				}if (rs != null) {
+				}
+				if (rs != null) {
 					rs.close();
 				}
 			} catch (SQLException e) {

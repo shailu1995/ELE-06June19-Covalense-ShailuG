@@ -9,12 +9,12 @@ import java.sql.Statement;
 import lombok.extern.java.Log;
 
 @Log
-public final class JdbcForAWSDB {
+public final class JdbcWithAWSDB {
 	public static void main(String[] args) {
 		String query = "select * from employee_info";
-		String dbUrl = "jdbc:mysql://localhost:3306/covalense";
-//try with resources;
-		try (Connection con = DriverManager.getConnection(dbUrl, "root", "root");
+		String dbUrl = "jdbc:mysql://shailugadmi.cvap8faycjot.ap-south-1.rds.amazonaws.com:3306/covalense";
+      //try with resources;
+		try (Connection con = DriverManager.getConnection(dbUrl, "root", "Shailaja23");
 				Statement stmt = con.createStatement();
 				ResultSet rs = stmt.executeQuery(query);) {
 
