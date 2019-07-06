@@ -1,0 +1,16 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+    <class name="com.covalense.hibernet.dto.DeptBean" table="department_info">
+        <id name="dept_no" type="int">
+            <column name="dept_id"/>
+        </id>
+        <property name="dname" type="java.lang.String">
+        <column name="dept_name"/>
+        </property>
+    </class>
+  </hibernate-mapping>
+  
