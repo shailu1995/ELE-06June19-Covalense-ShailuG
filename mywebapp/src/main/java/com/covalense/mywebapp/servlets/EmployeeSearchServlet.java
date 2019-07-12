@@ -1,0 +1,58 @@
+package com.covalense.mywebapp.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.covalense.mywebapp.bean.EmployeeInfoBean;
+import com.covalense.mywebapp.dao.EmployeeDAO;
+import com.covalense.mywebapp.dao.EmployeeDAOFactory;
+@WebServlet("/search")
+public class EmployeeSearchServlet extends HttpServlet {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String idValue = req.getParameter("empid");
+		
+		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
+		EmployeeInfoBean bean = dao.getEmployeeInfo(idValue);
+
+		// send the
+		PrintWriter out = resp.getWriter();
+
+		if (bean == null) {
+			out.print("<HTML>");
+			out.print("<BODY>");
+			out.print("<H1><span style=\"color: red\"> Employee Not Found!!!</span></H1>");
+			out.print("</BODY>");
+			out.print("</HTML>");
+		} else {
+			out.print("<HTML>");
+			out.print("<BODY>");
+			out.print("<H1><span style=\"color: green\"> Employee  Found.....</span></H1>");
+			out.print("<br>");
+			out.print("<br> Id " + bean.getId());
+			out.print("<br> Name " + bean.getName());
+			out.print("<br> Age " + bean.getAge());
+			out.print("<br> Salary " + bean.getSalary());
+			out.print("<br> Account number" + bean.getAcnt_no());
+			out.print("<br> Email_id " + bean.getEmail());
+			out.print("<br> Gender " + bean.getGender());
+			out.print("<br> Phone number " + bean.getPhone());
+			out.print("<br> Designation " + bean.getDesignation());
+			out.print(" <br> Department id" + bean.getDepartmentId());
+			out.print("<br>Manager id " + bean.getManagerid());
+			out.print("<br> Date of birth " + bean.getDob());
+			out.print("<br>Joining date " + bean.getJoiningdate());
+			out.print("</BODY>");
+			out.print("</HTML>");
+		}
+	}// end of doget
+
+}// end of main
