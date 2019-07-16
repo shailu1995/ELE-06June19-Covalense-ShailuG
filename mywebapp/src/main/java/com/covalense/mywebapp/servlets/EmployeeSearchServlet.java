@@ -4,7 +4,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
 
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +17,25 @@ import com.covalense.mywebapp.bean.EmployeeInfoBean;
 import com.covalense.mywebapp.dao.EmployeeDAO;
 import com.covalense.mywebapp.dao.EmployeeDAOFactory;
 @WebServlet("/search")
+//@WebServlet("/search/employeesearch")
+/*@WebServlet(urlPatterns = "/search",
+initParams = {
+		@WebInitParam(name="actress",value="basanthi")
+}
+
+		)*/
+
 public class EmployeeSearchServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		ServletContext ctx = getServletContext();
+		String movieName = ctx.getInitParameter("movie");
+
+		ServletConfig config = getServletConfig();
+		String actorname = config.getInitParameter("actor");
+		//String movieName1=config.getInitParameter("movie");
+		
 		String idValue = req.getParameter("empid");
 		
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
@@ -50,6 +68,8 @@ public class EmployeeSearchServlet extends HttpServlet {
 			out.print("<br>Manager id " + bean.getManagerid());
 			out.print("<br> Date of birth " + bean.getDob());
 			out.print("<br>Joining date " + bean.getJoiningdate());
+			out.print("<br> name of movie " + movieName);
+			out.print("<br>name of  actress " + actorname);
 			out.print("</BODY>");
 			out.print("</HTML>");
 		}
