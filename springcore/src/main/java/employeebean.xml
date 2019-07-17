@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="messageBean" class="com.covalense.elf.springcore.beans.MessageBean"> 
+		<property name="message" value="hiiii____!"></property> </bean> -->
+	<!-- <bean id="Employee1" class="com.covalense.elf.springcore.beans.EmployeeBean" 
+		scope="prototype"> </bean> -->
+	<!-- wiring bean -->
+	
+	<import resource="departmentbean.xml"/>
+	<bean id="Employee1"
+		class="com.covalense.elf.springcore.beans.EmployeeBean"
+		scope="prototype" autowire="constructor">
+		<property name="name" value="swati"></property>
+		<property name="id" value="15"></property>
+		<!-- <property name="departmentBean" ref="departmentBean"></property> -->
+	</bean>
+
+	
+
+</beans>

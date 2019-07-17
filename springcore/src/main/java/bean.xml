@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="messageBean" class="com.covalense.elf.springcore.beans.MessageBean"> 
+		<property name="message" value="hiiii____!"></property> </bean> -->
+	<!-- <bean id="Employee1" class="com.covalense.elf.springcore.beans.EmployeeBean" 
+		scope="prototype"> </bean> -->
+	<!-- wiring bean -->
+	<bean id="Employee1"
+		class="com.covalense.elf.springcore.beans.EmployeeBean"
+		scope="prototype" autowire="byType">
+		<property name="name" value="swati"></property>
+		<property name="id" value="15"></property>
+		<!-- <property name="departmentBean" ref="departmentBean"></property> -->
+	</bean>
+
+	<bean id="it"
+		class="com.covalense.elf.springcore.beans.DepartmentBean">
+		<property name="deptId" value="11"></property>
+		<property name="deptName" value="ewr"></property>
+	</bean>
+
+	<bean id="dev"
+		class="com.covalense.elf.springcore.beans.DepartmentBean"
+		autowire-candidate="false">
+		<property name="deptId" value="13"></property>
+		<property name="deptName" value="java"></property>
+	</bean>
+
+	<bean id="testing"
+		class="com.covalense.elf.springcore.beans.DepartmentBean"
+		autowire-candidate="false">
+		<property name="deptId" value="21"></property>
+		<property name="deptName" value="selenium"></property>
+	</bean>
+
+</beans>
