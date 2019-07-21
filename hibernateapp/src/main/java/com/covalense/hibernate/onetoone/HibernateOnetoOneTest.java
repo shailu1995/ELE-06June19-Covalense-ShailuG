@@ -1,0 +1,41 @@
+package com.covalense.hibernate.onetoone;
+
+import java.text.ParseException;
+import java.util.Arrays;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.covalense.hibernate.util.HibernateUtil;
+
+import lombok.extern.java.Log;
+
+@Log
+public class HibernateOnetoOneTest {
+
+	public static void main(String[] args) throws ParseException{
+
+		// prepare Data
+		int id = 444;
+		EmployeeInfo data = PrepareDataUtil.perpareData(id);
+		save(data);
+
+	}// end of main
+
+	private static void save(EmployeeInfo data) {
+
+		Transaction txn = null;
+		try (Session session = HibernateUtil.getSession()) {
+			txn = session.beginTransaction();
+			session.save(data);
+			txn.commit();
+		} catch (Exception ex) {
+			log.severe(Arrays.toString(ex.getStackTrace()));
+			if (txn != null) {
+				txn.rollback();
+
+			} // end of try catch
+		}
+	}// end of prepare data
+
+}// end of class
