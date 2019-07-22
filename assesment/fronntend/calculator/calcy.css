@@ -1,0 +1,13 @@
+.title{ 
+    margin-bottom: 10px; 
+    text-align:center; 
+    width: 210px; 
+    color:green; 
+    border: solid black 1px; 
+    }
+    input
+    { 
+   
+    border: solid black 1px; 
+    width:100% 
+    } 
