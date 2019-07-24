@@ -16,14 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.covalense.mywebapp.bean.EmployeeInfoBean;
 import com.covalense.mywebapp.dao.EmployeeDAO;
 import com.covalense.mywebapp.dao.EmployeeDAOFactory;
+
 @WebServlet("/search")
 //@WebServlet("/search/employeesearch")
-/*@WebServlet(urlPatterns = "/search",
-initParams = {
-		@WebInitParam(name="actress",value="basanthi")
-}
-
-		)*/
+/*
+ * @WebServlet(urlPatterns = "/search", initParams = {
+ * 
+ * @WebInitParam(name="actress",value="basanthi") }
+ * 
+ * )
+ */
 
 public class EmployeeSearchServlet extends HttpServlet {
 	@Override
@@ -34,10 +36,10 @@ public class EmployeeSearchServlet extends HttpServlet {
 
 		ServletConfig config = getServletConfig();
 		String actorname = config.getInitParameter("actor");
-		//String movieName1=config.getInitParameter("movie");
-		
+		// String movieName1=config.getInitParameter("movie");
+
 		String idValue = req.getParameter("empid");
-		
+
 		EmployeeDAO dao = EmployeeDAOFactory.getInstance();
 		EmployeeInfoBean bean = dao.getEmployeeInfo(idValue);
 
@@ -70,6 +72,27 @@ public class EmployeeSearchServlet extends HttpServlet {
 			out.print("<br>Joining date " + bean.getJoiningdate());
 			out.print("<br> name of movie " + movieName);
 			out.print("<br>name of  actress " + actorname);
+			out.print("</BODY>");
+			out.print("</HTML>");
+		}
+
+		// get the obj form forward servlet
+		//EmployeeInfoBean empInfo = (EmployeeInfoBean) req.getAttribute("info");
+		EmployeeInfoBean empInfo = (EmployeeInfoBean) ctx.getAttribute("info");
+		if (empInfo == null) {
+			out.print("<HTML>");
+			out.print("<BODY>");
+			out.print("<H1><span style=\"color: red\"> Employeeinfobean obj Not Found!!!</span></H1>");
+			out.print("</BODY>");
+			out.print("</HTML>");
+		} else {
+			out.print("<HTML>");
+			out.print("<BODY>");
+			out.print("<H1><span style=\"color: green\"> Employee  Found.....</span></H1>");
+			out.print("<br>");
+			out.print("<br> Id " + bean.getId());
+			out.print("<br> Name " + bean.getName());
+			out.print("<br> Name " + bean.getEmail());
 			out.print("</BODY>");
 			out.print("</HTML>");
 		}

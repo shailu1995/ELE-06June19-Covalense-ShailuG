@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.covalense.mywebapp.bean.EmployeeInfoBean;
+
 public class MyFirstServlet extends HttpServlet {
 
 	@Override
@@ -43,13 +45,29 @@ public class MyFirstServlet extends HttpServlet {
 
 				"</body>" + "</html>";
 
-		// send the Above Html response to browser
 		resp.setContentType("text/html");
-		// resp.setContentType("application/pdf");
-		// resp.setHeader("Refresh", "1");//auto refresh
+
 		PrintWriter out = resp.getWriter();
 		out.print(htmlResponse);
 
-	}// end of doget
+	EmployeeInfoBean empInfo = (EmployeeInfoBean) ctx.getAttribute("info");
+	if (empInfo == null) {
+		out.print("<HTML>");
+		out.print("<BODY>");
+		out.print("<H1><span style=\"color: red\"> Employeeinfobean obj Not Found!!!</span></H1>");
+		out.print("</BODY>");
+		out.print("</HTML>");
+	} else {
+		out.print("<HTML>");
+		out.print("<BODY>");
+		out.print("<H1><span style=\"color: green\"> Employee  Found.....</span></H1>");
+		out.print("<br>");
+		out.print("<br> Id " + empInfo.getId());
+		out.print("<br> Name " + empInfo.getName());
+		out.print("<br> Name " + empInfo.getEmail());
+		out.print("</BODY>");
+		out.print("</HTML>");
+	}
+}
 
 }// end of main
